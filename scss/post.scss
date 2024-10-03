@@ -3,3 +3,53 @@
  * Add your SCSS code here.
  * It will be added on top of Boost Union's SCSS code.
  ***************************************************************/
+.btn-footer-popover i {
+	color: white;
+}
+.moodle-dialogue-bd img:hover,img.expand-2x:hover {
+  box-shadow: 5px 5px 8px #999999;
+  border: 1px solid #999;
+}
+.popover .footer-section a.mobilelink { display: block; }
+.moodle-dialogue-bd img:active, img.expand-2x:active {
+  transform: scale(2);
+  border: 1px solid #999999;
+}
+
+.login-identityproviders {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  background-color: #39593E;
+  a.login-identityprovider-btn {
+    background-color: red;
+    border-radius: .75rem;
+    margin: 1em auto 3em;
+    padding: 1em;
+    color: #ffffff;
+  }
+  a.btn-block {
+    width: 56%;
+  }
+  a img {
+    filter: brightness(0%) invert(100%);
+  }
+}
+#login div.login-heading { padding-bottom: 1em; }
+.btn-ulid {
+  color: #fff;
+  background-color: #39593E;
+  border-color: #fff;
+}
+  .btn-ulid:focus {
+    background-color: #39593E;
+    box-shadow: none;
+  }
+.activity-badges span.badge,
+.sectionbadges span.badge,
+.dropdown button.badge {
+    color: #fff !important
+}
+.login-container .login-identityproviders .login-identityprovider-btn {
+  border: 1px solid #AC2927;
+}
+ nav.navbar {background-color:red !important;}
