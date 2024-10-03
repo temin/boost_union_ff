@@ -1,3 +1,316 @@
+// Preset file for Faculty of Arts, University of Ljubljana
+
+/*************************** Import section  *****************************/
+// Always the same. See file ./preset/plain.scss
+
+// Import FontAwesome.
+@import "fontawesome";
+ 
+// Import All of Bootstrap.
+@import "bootstrap";
+ 
+// Import Core moodle CSS.
+@import "moodle";
+
+/*************************** Variables section. *****************************/
+// Create variables to override the default value for variables used in the
+// Moodle and Bootstrap SCSS files.
+
+/// Colors
+$eff-white: #ffffff;
+$eff-purple: #423043;
+$eff-dark-green: #39593E;
+$eff-brown: #8D8878;
+$eff-desert-grey-medium: #F1EFE8;
+$eff-desert-grey-light: #F8F7F3;
+$eff-red: #DA261B;
+$eff-red-dark: #AC2927;
+$eff-red-light: #f78c87;//#FC3F35;
+$eff-red-light-hover: #FDE2E1;
+
+/*************************** Rules section ****************************/
+
+/// BEGIN DIY Multilanguage Content
+
+body[class*='lang-'] .multilang-sl {
+  display: none
+}
+
+body.lang-sl .multilang-en {
+    display: none;
+}
+
+body.lang-sl .multilang-sl {
+    display: inline;
+}
+/// END DIY Multilanguage Content
+
+/// BEGIN My Courses Page
+body.page-mycourses {
+
+    #page {
+    
+        .main-inner,
+        #region-main,
+        .block_myoverview,
+        input[name="search"],
+        .course-summaryitem,
+        div[id*="courses-view-"] .list-group-item {
+        
+            background-color: $eff-desert-grey-light;
+            
+        }
+
+    }
+}
+/// END My Courses Page
+
+/// BEGIN My Dashboard Page
+body.pagelayout-mydashboard {
+    
+    #page {
+    
+        .main-inner {
+            
+            background-color: $eff-desert-grey-light;
+            
+        }
+    
+    }
+}
+/// END My Dashboard Page
+
+/// BEGIN Front Page
+
+    body.pagelayout-frontpage {
+
+        #page {
+
+            #region-main {
+
+                background-color: $eff-desert-grey-medium;
+
+            }
+
+            .frontpage-course-list-enrolled .coursebox {
+
+                background-color: $eff-desert-grey-light;
+
+            }
+        }
+    }
+
+    /// BEGIN Blok s povezavami na vse kategorije/oddelke na prvi strani spletnega mesta
+    #inst32186 {
+        background-color: $eff-dark-green;
+        color: #ffffff;
+        
+        a:not(.dropdown-item) {
+            color: #ffffff !important;   
+        }
+        
+        a:focus:not(.dropdown-item) {
+            background-color: $eff-dark-green;
+            box-shadow: none;
+            text-decoration: underline;
+        }
+
+        // Izboljšanje preglednosti seznama: popravek razmakov in zamik prelomljene vrstice
+        .dept-link {
+            text-indent: -1em;
+            padding: 2px 0 2px 1em;
+            line-height: 20px;
+        }
+    }
+    /// END Blok s povezavami na vse kategorije
+
+/// END Front Page
+
+@mixin link-white() {
+    
+    a {
+        color: #ffffff !important;
+    }
+
+    a:focus {
+        background-color: $eff-dark-green;
+        box-shadow: none;
+        text-decoration: underline;
+    }
+    
+}
+
+
+/// BEGIN Other / General Styles
+
+a { color: $eff-red; }
+a:hover { color: $eff-red-dark;}
+
+.secondary-navigation .moremenu,
+.secondary-navigation .navigation ul {
+    
+    // background-color: $eff-dark-green;
+    // @include link-white();
+    background-color: $eff-desert-grey-medium;
+
+}
+
+.drawer {background-color: $eff-desert-grey-light;}
+
+/// END Other / General Styles
+
+
+/// BEGIN Course Category View
+
+#page-course-index-category {
+
+    .content {
+     
+        .subcategories {
+            
+            background-color: $eff-dark-green;
+            padding: 1em;
+            
+            .categoryname {
+                @include link-white();
+                font-size: 2em;
+            }
+        }
+        
+        .courses {
+
+            margin-top: 1em;
+            padding-top: 1em;
+            
+            h3.coursename {
+                
+                font-size: 2em;
+            }
+            
+            .content {
+                padding-left: 2em;
+                padding-bottom: 1em;
+            }
+            
+            .coursebox {
+                padding: 0.7em 1em;
+            }
+            .coursebox.even {
+                background-color: $eff-desert-grey-medium;
+            }
+
+            .coursebox.odd {
+                background-color: $eff-desert-grey-light;
+            }
+            
+        }
+        
+    }
+
+}
+
+/// END Course Category View
+
+/// BEGIN - Login Page
+
+
+.pagelayout-login {
+    
+    #page {
+        background: #ffffff;
+        
+        .login-container {
+            box-shadow: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        #login.login-form {
+            padding: 2rem 2rem 1rem 2rem;
+            background: $eff-desert-grey-medium;
+        }
+        .login-divider {
+            border-top: none;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2.login-heading {
+            background: $eff-dark-green;
+            color: #ffffff;
+            padding: 2rem 2rem 1rem;
+            margin-bottom: 0;
+        }
+
+        #guestlogin {
+            background: $eff-dark-green;
+            color: #ffffff;
+            text-align: center;
+            padding-bottom: 2rem;
+
+            .btn-secondary {
+                background-color: #fff;
+                border-color: #fff;
+                color: $eff-red;
+                
+                &:hover {
+                    background-color: rgba(255,255,255,.7);
+                }
+            }
+        }
+
+        /// Vrstni red je pomemben zaradi oblikovenja
+        .login-instructions, {
+            padding: 2rem 2rem 1rem 2rem;
+            background: $eff-purple;
+            color: #ffffff;
+            margin-bottom: 0 !important;
+
+            h2.login-heading {
+                background: $eff-purple;
+                color: #ffffff;
+                padding: 0;
+            }
+        }
+        
+        .login-signup {
+
+            background: $eff-purple;
+            color: #ffffff;
+            text-align: center;
+            padding-bottom: 2rem;
+            
+            a {
+                color: $eff-red-light;
+            }
+
+            .btn-secondary {
+                background-color: #fff;
+                border-color: #fff;
+                color: $eff-red;
+                
+                &:hover {
+                    background-color: rgba(255,255,255,.7);
+                }
+            }
+        }
+        
+        .d-flex {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+/// END - Login Page
+
+/// BEGIN Remove site administration button in header
+.primary-navigation li[data-key="siteadminnode"] {
+    display: none;
+}
+
+/// END Remove site administration button in header
+
+
 /****************************************************************
  * EXTENSION POINT:
  * Add your SCSS code here.
