@@ -73,11 +73,22 @@ To build your own grandchild theme of Boost with this boilerplate, you have to g
 
 If you want to run your grandchild theme with a different name than theme_boost_union_child, for example theme_boost_union_foo, you have to take some actions:
 
+**All commands need to be run from theme's root directory `/theme/boost_union_[child|foo]`**
+
 * In the whole codebase of Boost Union Child below /theme/boost_union_child,
   * search all occurrences of 'boost_union_child' and replace them with 'boost_union_foo'
+    ```
+    grep -lr 'boost_union_child' . | grep -vE '(\.github|\.git|README\.md)' | xargs sed -i 's/boost_union_child/boost_union_ff/g'
+    ```
   * search all occurrences of 'Boost Union Child' and replace them with 'Boost Union Foo'
+    ```
+    grep -lr 'Boost Union Child' . | grep -vE '(\.github|\.git|README\.md)' | xargs sed -i 's/Boost Union Child/Boost Union FF/g'
+    ```
 * In the language pack directory /theme/boost_union_child/lang,
   * rename the language pack file from en/theme_boost_union.php to en/theme_boost_foo.php
+  ```
+  mv lang/en/theme_boost_union_child.php lang/en/theme_boost_union_ff.php
+  ```
 * In the tests directory /theme/boost_union_child/tests/behat,
   * rename the Behat step definition files from behat_theme_boost_union_child_behat_\*.php to behat_theme_boost_union_foo_behat_\*.php
 
