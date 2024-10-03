@@ -69,7 +69,7 @@ Even though Boost Union Child is a fully working theme, it looks and feels exact
 
 To build your own grandchild theme of Boost with this boilerplate, you have to go further.
 
-### Renaming the grandchild theme (optional)
+### Renaming the grandchild theme (optional) [edited]
 
 If you want to run your grandchild theme with a different name than theme_boost_union_child, for example theme_boost_union_foo, you have to take some actions:
 
@@ -91,6 +91,9 @@ If you want to run your grandchild theme with a different name than theme_boost_
   ```
 * In the tests directory /theme/boost_union_child/tests/behat,
   * rename the Behat step definition files from behat_theme_boost_union_child_behat_\*.php to behat_theme_boost_union_foo_behat_\*.php
+  ```
+  for f in $(find tests/behat/ -name '*boost_union_child*.php'); do mv $f ${f//"boost_union_child"/"boost_union_ff"}; done
+  ```
 
 ### Add your Boost Union Child features
 
