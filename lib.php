@@ -39,13 +39,8 @@ function theme_boost_union_ff_get_main_scss_content($theme) {
     require_once($CFG->dirroot . '/theme/boost_union/lib.php');
 
     // As a start, get the compiled main SCSS from Boost Union.
-<<<<<<< HEAD
-    // This way, Boost Union FF will ship the same SCSS code as Boost Union itself.
-    $scss = theme_boost_union_get_main_scss_content(theme_config::load('boost_union'));
-=======
     // This way, Boost Union Child will ship the same SCSS code as Boost Union itself.
     $scss = theme_boost_union_get_main_scss_content(\core\output\theme_config::load('boost_union'));
->>>>>>> 0d95740f468c9c98dad73a98af089191479a06ea
 
     // And add Boost Union FF's main SCSS file to the stack.
     $scss .= file_get_contents($CFG->dirroot . '/theme/boost_union_ff/scss/post.scss');
@@ -138,11 +133,7 @@ function theme_boost_union_ff_extend_busettingsoverview() {
         'label' => get_string('pluginname', 'theme_boost_union_ff'),
         'desc' => get_string('settingsoverview_buc_desc', 'theme_boost_union_ff'),
         'btn' => 'primary',
-<<<<<<< HEAD
-        'url' => new \moodle_url('/admin/settings.php', ['section' => 'theme_boost_union_ff']),
-=======
-        'url' => new \core\url('/admin/settings.php', ['section' => 'theme_boost_union_child']),
->>>>>>> 0d95740f468c9c98dad73a98af089191479a06ea
+        'url' => new \core\url('/admin/settings.php', ['section' => 'theme_boost_union_ff']),
     ];
 
     return $cards;
