@@ -133,7 +133,7 @@ function theme_boost_union_ff_extend_busettingsoverview() {
         'label' => get_string('pluginname', 'theme_boost_union_ff'),
         'desc' => get_string('settingsoverview_buc_desc', 'theme_boost_union_ff'),
         'btn' => 'primary',
-        'url' => new \core\url('/admin/settings.php', ['section' => 'theme_boost_union_ff']),
+        'url' => new moodle_url('/admin/settings.php', ['section' => 'theme_boost_union_ff']),
     ];
 
     return $cards;
