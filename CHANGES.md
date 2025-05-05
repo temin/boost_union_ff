@@ -1,4 +1,4 @@
-moodle-theme_boost_union_ff
+moodle-theme_boost_union_child
 ==============================
 
 Changes
