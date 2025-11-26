@@ -365,4 +365,13 @@ a:hover { color: $eff-red-dark;}
 .login-container .login-identityproviders .login-identityprovider-btn {
   border: 1px solid #AC2927;
 }
- nav.navbar {background-color:red !important;}
+
+/// BEGIN Maintainence warning
+.maintenancewarning {
+   position: fixed;
+   top: 15px !important;
+   right: 25% !important;
+   bottom: initial !important;
+   z-index: 10000 !important;
+}
+/// END Maintainence warning

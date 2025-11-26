@@ -22,8 +22,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use theme_boost_union\admin_settingspage_tabs_with_tertiary;
-
 defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig || has_capability('theme/boost_union:configure', context_system::instance())) {
