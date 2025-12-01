@@ -29,7 +29,21 @@ $eff-red-light: #f78c87;//#FC3F35;
 $eff-red-light-hover: #FDE2E1;
 
 /*************************** Rules section ****************************/
+/******** Logo Settings ********/
+// Set logo each boost_union chiled theme.
+:root {
+    --theme-logo-url: url([[pix:theme|/UL_FF-logo-moodle]]);
+}
 
+.navbar-light .navbar-brand {
+    content: var(--theme-logo-url);
+    height: 100%;
+    width: auto;
+    max-height: calc(60px - (0.25rem * 2));
+    //margin-right: 0.25rem !important;
+    border-style: none;
+}
+/******************************/
 /// BEGIN DIY Multilanguage Content
 
 body[class*='lang-'] .multilang-sl {
@@ -103,10 +117,10 @@ body.pagelayout-mydashboard {
     /// BEGIN Blok s povezavami na vse kategorije/oddelke na prvi strani spletnega mesta
     #inst32186 {
         background-color: $eff-dark-green;
-        color: #ffffff;
+        color: $eff-white;
         
         a:not(.dropdown-item) {
-            color: #ffffff !important;   
+            color: $eff-white !important;   
         }
         
         a:focus:not(.dropdown-item) {
@@ -129,7 +143,7 @@ body.pagelayout-mydashboard {
 @mixin link-white() {
     
     a {
-        color: #ffffff !important;
+        color: $eff-white !important;
     }
 
     a:focus {
@@ -217,7 +231,7 @@ a:hover { color: $eff-red-dark;}
 .pagelayout-login {
     
     #page {
-        background: #ffffff;
+        background: $eff-white;
         
         .login-container {
             box-shadow: none;
@@ -236,20 +250,20 @@ a:hover { color: $eff-red-dark;}
         
         h2.login-heading {
             background: $eff-dark-green;
-            color: #ffffff;
+            color: $eff-white;
             padding: 2rem 2rem 1rem;
             margin-bottom: 0;
         }
 
         #guestlogin {
             background: $eff-dark-green;
-            color: #ffffff;
+            color: $eff-white;
             text-align: center;
             padding-bottom: 2rem;
 
             .btn-secondary {
-                background-color: #fff;
-                border-color: #fff;
+                background-color: $eff-white;
+                border-color: $eff-white;
                 color: $eff-red;
                 
                 &:hover {
@@ -262,12 +276,12 @@ a:hover { color: $eff-red-dark;}
         .login-instructions, {
             padding: 2rem 2rem 1rem 2rem;
             background: $eff-purple;
-            color: #ffffff;
+            color: $eff-white;
             margin-bottom: 0 !important;
 
             h2.login-heading {
                 background: $eff-purple;
-                color: #ffffff;
+                color: $eff-white;
                 padding: 0;
             }
         }
@@ -275,7 +289,7 @@ a:hover { color: $eff-red-dark;}
         .login-signup {
 
             background: $eff-purple;
-            color: #ffffff;
+            color: $eff-white;
             text-align: center;
             padding-bottom: 2rem;
             
@@ -284,8 +298,8 @@ a:hover { color: $eff-red-dark;}
             }
 
             .btn-secondary {
-                background-color: #fff;
-                border-color: #fff;
+                background-color: $eff-white;
+                border-color: $eff-white;
                 color: $eff-red;
                 
                 &:hover {
@@ -310,12 +324,7 @@ a:hover { color: $eff-red-dark;}
 
 /// END Remove site administration button in header
 
-
-/****************************************************************
- * EXTENSION POINT:
- * Add your SCSS code here.
- * It will be added on top of Boost Union's SCSS code.
- ***************************************************************/
+// Barva vprašaja (?) za meni pomoči
 .btn-footer-popover i {
 	color: white;
 }
@@ -323,7 +332,11 @@ a:hover { color: $eff-red-dark;}
   box-shadow: 5px 5px 8px #999999;
   border: 1px solid #999;
 }
-.popover .footer-section a.mobilelink { display: block; }
+
+.popover .footer-section a.mobilelink { 
+  display: block;
+}
+
 .moodle-dialogue-bd img:active, img.expand-2x:active {
   transform: scale(2);
   border: 1px solid #999999;
@@ -332,13 +345,13 @@ a:hover { color: $eff-red-dark;}
 .login-identityproviders {
   margin-bottom: 2em;
   padding-bottom: 2em;
-  background-color: #39593E;
+  background-color: $eff-dark-green;
   a.login-identityprovider-btn {
     background-color: red;
     border-radius: .75rem;
     margin: 1em auto 3em;
     padding: 1em;
-    color: #ffffff;
+    color: $eff-white;
   }
   a.btn-block {
     width: 56%;
@@ -349,21 +362,21 @@ a:hover { color: $eff-red-dark;}
 }
 #login div.login-heading { padding-bottom: 1em; }
 .btn-ulid {
-  color: #fff;
-  background-color: #39593E;
-  border-color: #fff;
+  color: $eff-white;
+  background-color: $eff-dark-green;
+  border-color: $eff-white;
 }
   .btn-ulid:focus {
-    background-color: #39593E;
+    background-color: $eff-dark-green;
     box-shadow: none;
   }
 .activity-badges span.badge,
 .sectionbadges span.badge,
 .dropdown button.badge {
-    color: #fff !important
+    color: $eff-white !important
 }
 .login-container .login-identityproviders .login-identityprovider-btn {
-  border: 1px solid #AC2927;
+  border: 1px solid $eff-red-dark;
 }
 
 /// BEGIN Maintainence warning
@@ -375,3 +388,11 @@ a:hover { color: $eff-red-dark;}
    z-index: 10000 !important;
 }
 /// END Maintainence warning
+
+// Nisem prepričan, da spodnjo vrstico še potrebujem
+.img-hover-extend:hover {transform: scale(1.7);}
+
+// Questionnaire: Popravi prikaz ikon za urejanje vprašanj
+#page-mod-questionnaire-questions .qn-container input {
+  max-height: 1em;
+}

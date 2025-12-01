@@ -67,9 +67,9 @@ if ($hassiteconfig || has_capability('theme/boost_union:configure', context_syst
                 THEME_BOOST_UNION_SETTING_SELECT_NO => get_string('no'), ];
 
 
-        // Create Boost Union Child settings page with tabs and tertiary navigation
+        // Create Boost Union FF settings page with tabs
         // (and allow users with the theme/boost_union:configure capability to access it).
-        $page = new admin_settingspage_tabs_with_tertiary('theme_boost_union_ff',
+        $page = new theme_boost_admin_settingspage_tabs('theme_boost_union_ff',
                 get_string('configtitle', 'theme_boost_union_ff', null, true),
                 'theme/boost_union:configure');
 

@@ -3,4 +3,8 @@
  * Add your Pre-SCSS code here.
  * It will be added on top of Boost Union's Pre-SCSS code.
  ***************************************************************/
-$primary: #DA261B
+// Določitev primarne barve FF: nastavitev sem odstranil iz administracijskih nastavitev in dodal sem
+$primary: #DA261B;
+
+// Popravek debeline fontov v naslovih: brez tega je teža nastavljena na 700
+$headings-font-weight: 500;
